@@ -73,6 +73,7 @@ int queryLinkList(Node *L,int i){
    }
    printf("%c",p->data);
 }
+//单链表的增删改查
 int main(){
   //初始化链表
   Node *L=(Node *)malloc(sizeof(Node));
