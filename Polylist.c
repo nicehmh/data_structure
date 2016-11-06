@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include <math.h>
 #define N 100
+/* 栈的结构类型 */
 typedef char ElemType;
-
 typedef struct Stack{
    ElemType elem[N];
    int top;
@@ -51,7 +51,6 @@ void statechange(Stack *S,int n,int i){
       a=a/i;
     }while(a>0);
 }
-
 //其他进制转十进制
 int changestate(Stack *L,int i){
    int k,n=0,l=L->top,g;
@@ -78,6 +77,4 @@ int main(){
      statechange(S,n,2);
      showStack(S);
    }
-   //Pop(S);
-   //printf("%d",S->top);
 }
