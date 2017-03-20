@@ -29,7 +29,7 @@ Node *Search(Node *root,int key){
 int Insert(Node *root,int value){
   Node *p=root,*q=NULL,*par=NULL;
   int mark=0;
-  while(p!=NULL&&mark==0){//
+  while(p!=NULL&&mark==0){//找到value应插入的父节点
       par=p;
       if(p->val==value){
         mark=1;
@@ -39,13 +39,13 @@ int Insert(Node *root,int value){
         p=p->RChild;
       }
   }
-  if(mark==1)  return 0;
+  if(mark==1)  return 0;//存在value则不插入
   q=(Node *)malloc(sizeof(Node));
   q->val=value;
   q->LChild=q->RChild=NULL;
   if(root==NULL){
      root=q;
-  }else if(par->val>q->val){
+  }else if(par->val>q->val){//判断插入其左右子树
      par->LChild=q;
   }else{
      par->RChild=q;
